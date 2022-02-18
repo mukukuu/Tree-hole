@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tree Hole</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+  <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>
+        <a href="/">Tree Hole</a>
+      </h1>
+
+   <nav class="row col-lg-7">
+        {{#if loggedIn}}
+        {{#if isDashboard}}
+        <a class="col-lg-4 text-center my-auto h4" href="/">Home</a>
+        {{else}}
+        <a class="col-lg-4 text-center my-auto h4" href="/dashboard">Dashboard</a>
+        {{/if}}
+        <button id="logout" class="btn-no-style col-lg-4 text-center my-auto h4">Logout</button>
+        {{/if}}
+        
+      </nav>
+
+    </header>
+
+    <main>
+      {{{ body }}}
+    </main>
+
+    <footer>
+      <p>Share your little secrets</p>
+    </footer>
+
+  </div>
+
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
+
+</body>
+
+</html>
