@@ -9,7 +9,7 @@ User.hasMany(Post, {
 });
 
 Post.belongsTo(User, {
-    foreignKey: 'user_id',
+    foreignKey: 'user_id'
 });
 
 Comment.belongsTo(User, {
@@ -28,4 +28,31 @@ Post.hasMany(Comment, {
     foreignKey: 'post_id'
 });
 
+
+//
+Post.belongsToMany(User, {
+    through: Likes,
+    as: 'liked_posts',
+    foreignKey: 'post_id',
+    onDelete: 'SET NULL'
+  });
+  
+  Likes.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: 'SET NULL'
+  });
+  
+  Likes.belongsTo(Post, {
+    foreignKey: 'post_id',
+    onDelete: 'SET NULL'
+  });
+  
+  User.hasMany(Likes, {
+    foreignKey: 'user_id'
+  });
+  
+  Post.hasMany(Likes, {
+    foreignKey: 'post_id'
+  });
+  
 module.exports = {User, Post, Comment};
