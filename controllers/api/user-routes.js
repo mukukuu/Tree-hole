@@ -90,7 +90,7 @@ router.get('/:id', (req, res) => {
       const validPassword = dbUserData.checkPassword(req.body.password);
   
       if (!validPassword) {
-        res.status(400).json({ message: 'Incorrect password!' });
+        res.status(400).json({ message: 'try again' });
         return;
       }
   
@@ -99,7 +99,7 @@ router.get('/:id', (req, res) => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
-        res.json({ user: dbUserData, message: 'You are now logged in!' });
+        res.json({ user: dbUserData, message: 'logged in' });
       });
       });
       });

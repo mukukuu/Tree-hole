@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
             'title',
             'created_at',
             'post_content',
-            [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE post.id = likes.post_id)'), 'likes_count']
+            
         ],
       order: [['created_at', 'DESC']],
       include: [

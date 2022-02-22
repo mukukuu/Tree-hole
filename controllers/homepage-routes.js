@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment } = require('../models');
+const { Post, User, Comment, Likes} = require('../models');
 
 //----------------get all post
 router.get('/', (req, res) => {
@@ -75,29 +75,23 @@ router.get('/post/:id', (req, res) => {
             'created_at'],
           include: {
             model: User,
-            attributes: [
-                'username',
-                'twitter',
-                'github']
+            attributes: ['username']
           }
         },
         {
           model: User,
-          attributes: [
-              'username',
-              'twitter',
-              'github']
+          attributes: ['username']
         }
       ]
     })
-      .then(dbPostData => {
-        if (!dbPostData) {
+      .then(postDat => {
+        if (!postDat) {
           res.status(404).json({ message: 'No post found with this id' });
           return;
         }
   
         // serialize the data
-        const post = dbPostData.get({ plain: true });
+        const post = postDat.get({ plain: true });
   
         // pass data to template
         res.render('single-post', {
