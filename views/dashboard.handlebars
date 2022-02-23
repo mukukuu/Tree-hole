@@ -1,10 +1,10 @@
-    <section class="mb-5 pt-3">
-        <a href="/dashboard/add/"><button id="add-post" class="button is-primary is-pulled-right">add post</button></a>
+    <div class="mb-5 pt-3">
+        <a href="/dashboard/create/"><button id="create-post" class="button is-primary is-pulled-right">create post</button></a>
         
-        <h2 class="title pb-4">dashboard</h2><hr>
+        <h2 class="title pb-4">Dashboard</h2><hr>
         <h2>Your Posts</h2>
         {{#if posts.length}}
-    </section>
+    </div>
 
         {{#each posts as |post|}}
         {{> post-info post}} 
