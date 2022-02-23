@@ -8,15 +8,17 @@ const helpers = require('./utils/helpers');
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({ helpers });
 
+//session
 const session = require('express-session');
 
+//port
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-  secret: 'bigbluedog',
+  secret: 'secret',
   cookie: {
         // Session will automatically expire in 10 minutes
         expires: 10 * 60 * 1000
