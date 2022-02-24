@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    border-radius: 17px;
   }
   
   body, html {
@@ -7,20 +8,24 @@
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    color: #333;
+   
+    color: rgb(35, 33, 42);
   }
-  
+  main {
+    background-color: #7a90ab;
+  }
   a {
     text-decoration: none;
     font-weight: bold;
-    color: black;
+    color: rgb(30, 26, 26);
   }
   
   a:hover {
-    color: #3486eb;
+    color: #689fe2;
   }
   
   button {
+    background-color: #362e2e;
     border: 0;
     padding: 1%;
     font-weight: bold;
@@ -35,7 +40,7 @@
   }
   
   textarea, input {
-    padding: .5%;
+    padding: 1;
     border-radius: 5px;
     border: 1px solid #ccc;
   }
@@ -68,7 +73,7 @@
   }
   
   header {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid rgb(31, 31, 39);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -98,12 +103,12 @@
     color: #3486eb;
   }
   
-  .delete-post-btn {
-    background-color: #d41414;
+  .delete{
+    background-color: #39302e;
   }
   
-  .delete-post-btn:hover {
-    background-color: #ff643d;
+  .delete:hover {
+    background-color: #3b3432;
   }
   
   .post {
@@ -114,7 +119,7 @@
   .post .title span {
     font-style: italic;
     font-size: 90%;
-    color: #7d7d7d;
+    color: #201e1e;
   }
   
   .edit-link {
@@ -132,7 +137,7 @@
   }
   
   .comment:nth-child(odd) {
-    background-color: #fff5eb;
+    background-color: #5d8389;
   }
   
   .comment .meta {
@@ -146,7 +151,7 @@
   }
   
   footer {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid rgb(34, 32, 32);
     display: flex;
     justify-content: center;
     padding: 1%;
